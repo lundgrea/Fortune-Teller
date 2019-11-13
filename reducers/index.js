@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import { todos } from './todos';
+import { errorsReducer } from './errors'
+import { loadingReducer } from './loading'
 
 const rootReducer = combineReducers({
-  todos,
+ hasErrored: errorsReducer,
+ isLoading: loadingReducer
 });
 
 export default rootReducer;

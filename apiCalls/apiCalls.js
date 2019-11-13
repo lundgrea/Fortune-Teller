@@ -18,7 +18,7 @@ export const processGender = async (name) => {
   return gender
 }
 
-export const getAdvice = () => {
+export const getAdvice = async () => {
   const url = 'https://api.adviceslip.com/advice'
   const response = await fetch(url);
   if (!response.ok) {
