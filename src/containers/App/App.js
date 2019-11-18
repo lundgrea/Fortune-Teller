@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import { connect }from 'react-redux';
+import { setResponse } from '../../actions'
 
 class App extends Component{
   state = {
@@ -8,7 +10,7 @@ class App extends Component{
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.generateResults(this.state.name)
+    this.props.setResponse(this.state.name)
     this.setState({name: ''})
   }
 
@@ -37,4 +39,10 @@ class App extends Component{
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => ({
+  setResponse: name => dispatch(setResponse(name))
+})
+
+
+
+export default connect(null, mapDispatchToProps)(App);
