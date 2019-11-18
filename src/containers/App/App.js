@@ -24,16 +24,18 @@ class App extends Component{
     return (
     <div className="App">
       <h1>Welcome To The Fortune Teller</h1>
-        <h2>Enter Your Name To Have Your Fortune Read</h2>
-        <label>Enter Name</label>
-        <input 
-          placeholder="Your Name Here..." 
-          onChange={e => this.handleChange(e)}
-          type="text"
-          name="name"
-          value={this.state.name}
-        />
-        <button onClick={e => this.handleSubmit(e)}>Submit Name</button>
+        <h2>Enter Your Name & Have Your Fortune Read</h2>
+        <div className="form">
+          <label>Enter Name</label>
+          <input 
+            placeholder="Your Name Here..." 
+            onChange={e => this.handleChange(e)}
+            type="text"
+            name="name"
+            value={this.state.name}
+          />
+          <button onClick={e => this.handleSubmit(e)}>Submit Name</button>
+        </div>
     </div>
   );
   }
