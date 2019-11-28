@@ -5,12 +5,10 @@ import Fortune from '../../containers/Fortune/Fortune';
 import { connect } from 'react-redux';
 
 export const App = props => {
-  console.log('responses', props.response)
-  console.log('results', props.results)
   return (
     <>
-      {props.results && <NameForm />}
-      {props.responses && <Fortune />}
+      {props.results.length === 0 && <NameForm />}
+      {props.response && <Fortune />}
     </>
   );
 }

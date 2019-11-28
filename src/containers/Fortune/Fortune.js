@@ -4,15 +4,18 @@ import { connect } from 'react-redux';
 import { getResults, isLoading, handleErrors } from '../../actions/index'
 import { processAge } from '../../apiCalls/apiCalls'
 
-class Fortune extends Component{
-  componentDidMount = async (responses) => {
-    let ageResults = await processAge(responses)
+class Fortune extends Component {
+
+  componentDidMount = async (name) => {
+    let ageResults = await processAge(this.props.response)
     console.log(ageResults)
+    this.props.getResults(ageResults)
+    // console.log(ageResults)
   }
 
   render() {
     return(
-      <h1>Hello</h1>
+      <h1>{this.props.results}</h1>
     )
   }
 }
