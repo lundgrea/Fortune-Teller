@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import './NameForm.css';
 import { connect }from 'react-redux';
 import { setResponse } from '../../actions'
 
-class App extends Component{
+class NameForm extends Component{
   state = {
     name: '',
   }
@@ -47,4 +47,4 @@ export const mapDispatchToProps = dispatch => ({
 
 
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(NameForm);
