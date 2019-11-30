@@ -2,20 +2,22 @@ import React, { Component } from 'react';
 import './Fortune.css';
 import { connect } from 'react-redux';
 import { getResults, isLoading, handleErrors } from '../../actions/index'
-import { processAge } from '../../apiCalls/apiCalls'
+import { processAge, processGender, getAdvice } from '../../apiCalls/apiCalls'
 
 class Fortune extends Component {
 
   componentDidMount = async (name) => {
     let ageResults = await processAge(this.props.response)
-    console.log(ageResults)
     this.props.getResults(ageResults)
-    // console.log(ageResults)
+    let genderResults = await processGender(this.props.response)
+    this.props.getResults(genderResults)
+    let advice = await getAdvice()
+    this.props.getResults(advice)
   }
 
   render() {
     return(
-      <h1>{this.props.results}</h1>
+      <h1>results</h1>
     )
   }
 }
