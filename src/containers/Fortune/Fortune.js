@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './Fortune.css';
+import GenderResults from '../../components/GenderResults/GenderResults';
+import AgeResults from '../../components/AgeResults/AgeResults';
+import AdviceResults from '../../components/AdviceResults/AdviceResults';
 import { connect } from 'react-redux';
-import { getResults, isLoading, handleErrors } from '../../actions/index'
-import { processAge, processGender, getAdvice } from '../../apiCalls/apiCalls'
+import { getResults, isLoading, handleErrors } from '../../actions/index';
+import { processAge, processGender, getAdvice } from '../../apiCalls/apiCalls';
 
 class Fortune extends Component {
 
@@ -17,7 +20,12 @@ class Fortune extends Component {
 
   render() {
     return(
-      <h1>results</h1>
+      <>
+        {this.props.results.length > 0 && <h1>{this.props.results[0].name}</h1>}
+        {this.props.results.length === 3 && <GenderResults results={this.props.results[1]}/>}
+        {this.props.results.length === 3 && <AgeResults results={this.props.results[0]}/>}
+        {this.props.results.length === 3 && <AdviceResults results={this.props.results[2]}/>}
+      </>
     )
   }
 }
