@@ -1,7 +1,6 @@
 import React from 'react'
 
 export const GenderResults = props => {
-  console.log(props.results)
   return (
     <>
       <h2>Guessed Gender: </h2>
