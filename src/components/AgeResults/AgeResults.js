@@ -1,4 +1,5 @@
 import React from 'react';
+import './AgeResults.css';
 
 export const AgeResults = props => {
   return (
