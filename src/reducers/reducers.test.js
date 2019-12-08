@@ -2,6 +2,7 @@
 import { errorsReducer } from './errors'
 import { loadingReducer } from './loading'
 import { responseReducer } from './response'
+import { resultsReducer } from './results'
  
 
 describe('errorsReducer', () => {
@@ -65,5 +66,31 @@ describe('responseReducer', () => {
       type: 'CLEAR_RESPONSE'
     };
     expect(responseReducer(undefined, mockAction)).toEqual('');
+  });
+});
+
+
+describe('resultsReducer', () => {
+  it('should put the results from the fetch in the store if GET_RESULTS is met', () => {
+    let mockAction = {
+      type: 'GET_RESULTS',
+      results: [{name: 'Alyssa', age: 25, count: 2500}, {name: 'Alyssa', gender: 'female', probability: 0.97, count: 3000}, {slip: {advice: 'Sometimes you need to say sorry. Even if it is not your fault.', slipId: 21 }}]
+    };
+    expect(resultsReducer(undefined, mockAction)).toEqual([[{name: 'Alyssa', age: 25, count: 2500}, {name: 'Alyssa', gender: 'female', probability: 0.97, count: 3000}, {slip: {advice: 'Sometimes you need to say sorry. Even if it is not your fault.', slipId: 21 }} ]]);
+  });
+
+  it('should not change the store if GET_RESULTS is not met', () => {
+    let mockAction = {
+      type: 'SET_RESPONSES',
+      bool: 'lips'
+    };
+    expect(resultsReducer(undefined, mockAction)).toEqual([]);
+  });
+
+  it('should clear the store if CLEAR_RESULTS is met',() => {
+    let mockAction = {
+      type: 'CLEAR_RESULTS'
+    };
+    expect(resultsReducer(undefined, mockAction)).toEqual([]);
   });
 });
