@@ -21,8 +21,6 @@ describe('actions', () => {
     expect(results).toEqual(expectedAction);
   });
 
-
-
   it('should have a type of GET_RESULTS', () => {
     const mockResults = [[{name: 'Alyssa', age: 25, count: 2500}, {name: 'Alyssa', gender: 'female', probability: 0.97, count: 3000}, {slip: {advice: 'Sometimes you need to say sorry. Even if it is not your fault.', slipId: 21 }}]]
     const expectedAction = {

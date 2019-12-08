@@ -40,7 +40,6 @@ import { processAge, processGender, getAdvice } from '../apiCalls/apiCalls';
     });
   });
 
-
   describe('processGender', () => {
     let mockResponse;
     beforeEach(() => {
