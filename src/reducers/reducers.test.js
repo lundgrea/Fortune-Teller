@@ -1,7 +1,8 @@
 
 import { errorsReducer } from './errors'
 import { loadingReducer } from './loading'
-
+import { responseReducer } from './response'
+ 
 
 describe('errorsReducer', () => {
   it('should throw an error if handle error is met', () => {
@@ -37,5 +38,32 @@ describe('loadingReducer', () => {
       boolean: 'lips'
     };
     expect(loadingReducer(undefined, mockAction)).toEqual(true);
+  });
+});
+
+
+describe('responseReducer', () => {
+  it('should put not change the store if SET_RESPONSES is not met', () => {
+    let mockAction = {
+      type: 'IS_LOADING',
+      bool: true
+    };
+    expect(responseReducer(undefined, mockAction)).toEqual('');
+  });
+
+  it('should put the responses from the quiz in the store if SET_RESPONSES is met', () => {
+    let mockAction = {
+      type: 'SET_RESPONSE',
+      name: 'Alyssa'
+    };
+    expect(responseReducer(undefined, mockAction)).toEqual('Alyssa');
+  });
+
+
+  it('should clear the store if CLEAR_RESPONSES is met',() => {
+    let mockAction = {
+      type: 'CLEAR_RESPONSE'
+    };
+    expect(responseReducer(undefined, mockAction)).toEqual('');
   });
 });
