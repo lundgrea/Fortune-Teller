@@ -25,3 +25,12 @@
 .App-link {
   color: #09d3ac;
 }
+
+.welcome {
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.CTA {
+  margin: 10px 30px 10px 30px;
+}

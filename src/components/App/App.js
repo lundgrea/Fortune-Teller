@@ -6,10 +6,12 @@ import { connect } from 'react-redux';
 
 export const App = props => {
   return (
-    <>
+    <div className='App'>
+      <h1 className='welcome'>Welcome To The Fortune Teller</h1>
+      <h2 className='CTA'>Enter Your Name & Have Your Fortune Read</h2>
       {props.results.length === 0 && <NameForm />}
       {props.response && <Fortune />}
-    </>
+    </div>
   );
 }
 
