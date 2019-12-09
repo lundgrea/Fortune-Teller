@@ -5,6 +5,9 @@
 
 .App {
   text-align: center;
+  background-color: #312c2c8a;
+  width: 50%;
+  margin: auto;
 }
 
 .App-logo {
