@@ -7,8 +7,7 @@ import { connect } from 'react-redux';
 export const App = props => {
   return (
     <div className='App'>
-      <h1 className='welcome'>The Fortune Teller</h1>
-      <h2 className='CTA'>Share a bit...</h2>
+      <h1 className='welcome'>Fortune Cookie</h1>
       {props.results.length === 0 && <NameForm />}
       {props.response && <Fortune />}
     </div>

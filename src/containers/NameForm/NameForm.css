@@ -1,7 +1,28 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 15%;
+  width: 35%;
   text-align: center;
   margin: auto;
+  border-radius: 2px;
+}
+
+input {
+  margin: 10px;
+  border: 2px solid pink;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+button {
+  margin: 10px;
+  border-radius: 2px;
+  padding: 10px;
+  border: 2px solid white;
+  background-color: pink;
+  color: white;
+}
+
+.CTA {
+  margin: 10px 30px 30px 30px;
 }

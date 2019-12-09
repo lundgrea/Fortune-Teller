@@ -23,15 +23,16 @@ class NameForm extends Component{
   render() {
     return (
       <div className="form">
-        <label>Enter Name</label>
+        <h2 className='CTA'>Share a bit...</h2>
+        <label>What's your name?</label>
         <input 
-            placeholder="Your Name Here..." 
+            placeholder="Enter your name here..." 
             onChange={e => this.handleChange(e)}
             type="text"
             name="name"
             value={this.state.name}
         />
-        <button onClick={e => this.handleSubmit(e)}>Submit Name</button>
+        <button onClick={e => this.handleSubmit(e)}>Get My Fortune</button>
       </div>
   );
   }
