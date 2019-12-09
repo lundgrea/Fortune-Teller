@@ -22,21 +22,18 @@ class NameForm extends Component{
 
   render() {
     return (
-    <div className="App">
-      <h1>Welcome To The Fortune Teller</h1>
-        <h2>Enter Your Name & Have Your Fortune Read</h2>
-        <div className="form">
-          <label>Enter Name</label>
-          <input 
-            placeholder="Your Name Here..." 
+      <div className="form">
+        <h2 className='CTA'>Share a bit...</h2>
+        <label>What's your name?</label>
+        <input 
+            placeholder="Enter your name here..." 
             onChange={e => this.handleChange(e)}
             type="text"
             name="name"
             value={this.state.name}
-          />
-          <button onClick={e => this.handleSubmit(e)}>Submit Name</button>
-        </div>
-    </div>
+        />
+        <button onClick={e => this.handleSubmit(e)}>Get My Fortune</button>
+      </div>
   );
   }
 }

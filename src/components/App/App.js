@@ -6,10 +6,11 @@ import { connect } from 'react-redux';
 
 export const App = props => {
   return (
-    <>
+    <div className='App'>
+      <h1 className='welcome'>Fortune Cookie</h1>
       {props.results.length === 0 && <NameForm />}
       {props.response && <Fortune />}
-    </>
+    </div>
   );
 }
 

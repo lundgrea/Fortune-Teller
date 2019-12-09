@@ -1,22 +1,28 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 35%;
+  text-align: center;
+  margin: auto;
+  border-radius: 2px;
+}
+
+input {
+  margin: 10px;
+  border: 2px solid pink;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+button {
+  margin: 10px;
+  border-radius: 2px;
+  padding: 10px;
+  border: 2px solid white;
+  background-color: pink;
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.CTA {
+  margin: 10px 30px 30px 30px;
 }
